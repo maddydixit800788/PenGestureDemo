@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ibn-Op-XmQ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--File Manager-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PenGestureDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tj7-kF-D8V">
+                                <rect key="frame" x="167" y="772" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Tj7-kF-D8V" secondAttribute="height" multiplier="1:1" id="K27-qZ-Hy1"/>
+                                    <constraint firstAttribute="width" constant="80" id="Vgb-Uk-Sbi"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JV9-jj-2UI">
+                                <rect key="frame" x="10" y="103" width="100" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file_one" translatesAutoresizingMaskIntoConstraints="NO" id="g5K-8t-Bna">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="g5K-8t-Bna" firstAttribute="top" secondItem="JV9-jj-2UI" secondAttribute="top" id="09g-N9-sHU"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5K-8t-Bna" secondAttribute="trailing" id="Fhq-X1-dzX"/>
+                                    <constraint firstAttribute="bottom" secondItem="g5K-8t-Bna" secondAttribute="bottom" id="R0E-B2-5O5"/>
+                                    <constraint firstItem="g5K-8t-Bna" firstAttribute="leading" secondItem="JV9-jj-2UI" secondAttribute="leading" id="Zjh-B6-rTY"/>
+                                    <constraint firstAttribute="width" constant="100" id="csg-Gr-7de"/>
+                                    <constraint firstAttribute="width" secondItem="g5K-8t-Bna" secondAttribute="height" multiplier="1:1" id="y0t-wt-7cc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d3F-MT-Y5E" appends="YES" id="Wco-Ov-ZK7"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Tj7-kF-D8V" secondAttribute="bottom" constant="10" id="Cjd-XI-vgO"/>
+                            <constraint firstItem="JV9-jj-2UI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Q4q-y5-46N"/>
+                            <constraint firstItem="JV9-jj-2UI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="odD-sh-che"/>
+                            <constraint firstItem="Tj7-kF-D8V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zDR-iW-rMg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="File Manager" id="bZH-mG-uKR">
+                        <barButtonItem key="rightBarButtonItem" title="Undo" id="rRE-yE-tg8">
+                            <connections>
+                                <action selector="undoAction:" destination="BYZ-38-t0r" id="c18-kf-QOL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fileViewImage" destination="JV9-jj-2UI" id="yrZ-oK-wJa"/>
+                        <outlet property="trashImage" destination="Tj7-kF-D8V" id="sD1-LT-NbU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="d3F-MT-Y5E">
+                    <connections>
+                        <action selector="handleGestureRecognizer:" destination="BYZ-38-t0r" id="pK1-PC-Lim"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zAf-uP-0SO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibn-Op-XmQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ja5-2o-x3D">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2ad-3Z-F2b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeC-uk-JIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="file_one" width="400" height="400"/>
+        <image name="trash.png" width="100" height="100"/>
+    </resources>
+</document>
